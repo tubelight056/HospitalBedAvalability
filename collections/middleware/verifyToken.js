@@ -19,7 +19,6 @@ exports.VerifyToken = async (req, res, next) => {
       });
     } else {
       console.log(data);
-      req.body.tokenName = data.Name;
       req.body.tokenId = data.id;
       req.body.tokenEmail = data.Email;
       next();

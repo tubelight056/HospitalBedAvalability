@@ -29,3 +29,11 @@ Content-Type: application/json
 }
 
 
+###
+
+POST http://localhost:3500/hospital/get/all
+Content-Type: application/json
+
+{
+}
+
