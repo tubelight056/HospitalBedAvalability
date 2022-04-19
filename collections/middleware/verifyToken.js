@@ -24,5 +24,4 @@ exports.VerifyToken = async (req, res, next) => {
       next();
     }
   });
-  next();
 };
