@@ -37,3 +37,14 @@ Content-Type: application/json
 {
 }
 
+
+###
+
+POST http://localhost:3500/hospital/update/beds
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNAZ21haWwuY29tIiwiaWQiOiI2MjVkYTI3ZGExZjM5NTlhZmY2YTQxYjYiLCJpYXQiOjE2NTAzNTI0ODksImV4cCI6MTY1MDM5MjQ4OX0.MzViNEzSwRJz5LZk2TYWo-KqNrA1z0a-HGmpVGmwKug
+Content-Type: application/json
+
+{
+    "availableBeds":{"beds with oxygen":2}
+
+}

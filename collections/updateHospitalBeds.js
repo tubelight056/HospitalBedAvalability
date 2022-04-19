@@ -1,10 +1,10 @@
 const { Hospital } = require("../models/Hospitals");
 
-exports.GetAllHospitalDetails = async (req, res) => {
+exports.UpdateHospitalBeds = async (req, res) => {
   console.log("\n[+]  request", req.method, req.originalUrl);
   console.log("[+] ", req.body);
 
-  Hospital.UpdateOne(
+  Hospital.updateOne(
     { Email: req.body.tokenEmail },
     { AvailableBeds: req.body.availableBeds },
     async (error, result) => {
