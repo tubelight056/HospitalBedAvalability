@@ -11,13 +11,14 @@ let Port = process.env.PORT || 3500;
 
 const Auth = require("./Router/authentication");
 const Patient = require("./Router/patient");
-
+const Complain = require("./Router/Complain");
 const hospital = require("./Router/hospitals");
 App.listen(Port, (err, result) => {
   mongoose.connect(process.env.URL, (err, result) => {
     App.use("/auth", Auth);
     App.use("/hospital", hospital);
     App.use("/patient", Patient);
-    console.log("Hello world");
+    App.use("/complain", Complain);
+    console.log("My life full damage!!!");
   });
 });

@@ -67,7 +67,7 @@ Content-Type: application/json
 {
   "Name":"Logan",
   "PhoneNumber":1234567890,
-  "DOB": "01-01-2001",
+  "DOB": "01:01:2001",
   "Address":"Coimbatore"
 }
 
@@ -103,4 +103,21 @@ Content-Type: application/json
 
 {
     "PhoneNumber":1234567890
+}
+
+
+###
+
+POST http://localhost:3500/complain/upsert
+Content-Type: application/json
+
+{
+    "Name":"Prem",
+  "Email":"123@gmail.com",
+  "PhoneNumber": 1234567890,
+  "HospitalId":"626978f95475e9308b09eeec",
+  "AadharNumber":123245677890,
+  "ComplainDescription":"logan is half loose",
+  "ComplainAgainst":"Logan",
+  "Date":"29:04:2022",
 }
