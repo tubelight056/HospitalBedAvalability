@@ -64,7 +64,7 @@ Content-Type: application/json
 {
    "Location":"Coimbatore",
     "PhoneNumber":12345678909,
-     "Availablebeds":{"Beds with Oxygen":243,"ICU beds":100,"General Beds":1000},
+     "Availablebeds":{"Beds with Oxygen":{"Available":123,"Total":500},"ICU beds":{"Available":123,"Total":500},"General Beds":{"Available":123,"Total":500}},
      "Dean":"logan",
      "Deanno":9999999999
 }
