@@ -1,3 +1,4 @@
+const { GetAHospitalDetails } = require("../collections/getAHospitalDetails");
 const {
   GetAllHospitalDetails,
 } = require("../collections/getALLHospitalDetails");
@@ -10,6 +11,7 @@ const {
 const Router = require("express").Router();
 
 Router.post("/get/all", GetAllHospitalDetails);
+Router.post("/get/one", VerifyToken, GetAHospitalDetails);
 Router.post("/update/beds", VerifyToken, UpdateHospitalBeds);
 Router.post("/update/info", VerifyToken, UpdateHospitalDetails);
 

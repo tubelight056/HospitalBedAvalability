@@ -9,11 +9,6 @@ exports.Register = async (req, res) => {
     HospitalName: req.body.hospitalName,
     Email: req.body.email,
     Password: req.body.password,
-    // Location: req.body.location,
-    // PhoneNumber: req.body.phno,
-    // AvailableBeds: req.body.availablebeds,
-    // Dean: req.body.dean,
-    // DeanPhoneNumber: req.body.deanno,
   });
 
   RegisterDetails.save()

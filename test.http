@@ -6,7 +6,7 @@ POST http://localhost:3500/auth/register
 Content-Type: application/json
 
 {
-    "email":"ss@gmail.com",
+    "email":"s3s@gmail.com",
     "name":"ssss",
     "password":"helloworld",
     "hospitalName":"ssss"
@@ -31,6 +31,17 @@ POST http://localhost:3500/hospital/get/all
 Content-Type: application/json
 
 {
+    
+}
+
+###
+
+POST http://localhost:3500/hospital/get/one
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNzQGdtYWlsLmNvbSIsImlkIjoiNjI2YWMzOWVhNjVlM2RkMmJmOTY5MjA0IiwiaWF0IjoxNjUxMTY0NzgxfQ.1mY0HacWFbQVZHKpm8nW0SZk5bToUXOp5C2wGJZ83VE
+Content-Type: application/json
+
+{
+    
 }
 
 
@@ -119,5 +130,15 @@ Content-Type: application/json
   "AadharNumber":123245677890,
   "ComplainDescription":"logan is half loose",
   "ComplainAgainst":"Logan",
-  "Date":"29:04:2022",
+  "Date":"29:04:2022"
+}
+
+###
+
+POST http://localhost:3500/complain/get/all
+Content-Type: application/json
+
+{
+    
+  
 }
