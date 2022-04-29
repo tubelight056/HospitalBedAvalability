@@ -9,24 +9,19 @@ exports.Register = async (req, res) => {
     HospitalName: req.body.hospitalName,
     Email: req.body.email,
     Password: req.body.password,
-    Location: req.body.location,
-    PhoneNumber: req.body.phno,
-    AvailableBeds: req.body.availablebeds,
-    Dean: req.body.dean,
-    DeanPhoneNumber: req.body.deanno,
+    // Location: req.body.location,
+    // PhoneNumber: req.body.phno,
+    // AvailableBeds: req.body.availablebeds,
+    // Dean: req.body.dean,
+    // DeanPhoneNumber: req.body.deanno,
   });
 
   RegisterDetails.save()
     .then((doc) => {
       data = { Email: req.body.email, id: doc._id };
-      jwt.sign(
-        data,
-        process.env.SECRET,
-        { expiresIn: "40000s" },
-        async (err, token) => {
-          res.send({ status: true, token });
-        }
-      );
+      jwt.sign(data, process.env.SECRET, async (err, token) => {
+        res.send({ status: true, token });
+      });
     })
     .catch((err) => {
       res.send({ err, status: false, statusmessage: "Something went wrong" });

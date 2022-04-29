@@ -12,26 +12,21 @@ exports.Login = async (req, res) => {
       if (err) {
         res.send({ err, status: false, statusmessage: "Something went wrong" });
       } else {
-        if (result === {}) {
+        if (result === null) {
           res.send({ status: false, statusmessage: "No Valid credentials" });
         } else {
           data = { Email: req.body.email, id: result._id };
-          jwt.sign(
-            data,
-            process.env.SECRET,
-            { expiresIn: "40000s" },
-            async (err, token) => {
-              if (err) {
-                res.send({
-                  err,
-                  status: false,
-                  statusmessage: "Something went wrong",
-                });
-              } else {
-                res.send({ status: true, token });
-              }
+          jwt.sign(data, process.env.SECRET, async (err, token) => {
+            if (err) {
+              res.send({
+                err,
+                status: false,
+                statusmessage: "Something went wrong",
+              });
+            } else {
+              res.send({ status: true, token });
             }
-          );
+          });
         }
       }
     }

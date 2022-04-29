@@ -24,7 +24,7 @@ const hospitalDetails = new mongoose.Schema({
   },
   AvailableBeds: {
     type: Map,
-    of: Number,
+    of: { Available: { type: Number }, Total: { type: Number } },
     require: true,
   },
   Dean: {
@@ -35,6 +35,24 @@ const hospitalDetails = new mongoose.Schema({
     type: Number,
     require: true,
   },
+  Treatments: [
+    {
+      TreatmentName: { type: String },
+      TreatmentCost: { type: Number },
+      Doctors: [
+        {
+          Name: { type: String },
+        },
+      ],
+      AvailableFacilies: [
+        {
+          Name: { type: String },
+          Explanation: { type: String },
+        },
+      ],
+      EmergencyAvailable: { type: Boolean },
+    },
+  ],
 });
 
 hospitalDetails.set("timestamps", true);

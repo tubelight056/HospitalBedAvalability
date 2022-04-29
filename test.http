@@ -6,15 +6,11 @@ POST http://localhost:3500/auth/register
 Content-Type: application/json
 
 {
-    "email":"s@gmail.com",
+    "email":"ss@gmail.com",
     "name":"ssss",
     "password":"helloworld",
-    "hospitalName":"ssss",
-    "location":"Coimbatore",
-    "phno":12345678909,
-    "availablebeds":{"Beds with Oxygen":243,"ICU beds":100,"General Beds":1000},
-    "dean":"logan",
-    "deanno":9999999999
+    "hospitalName":"ssss"
+    
 }
 
 
@@ -24,7 +20,7 @@ POST http://localhost:3500/auth/login
 Content-Type: application/json
 
 {
-    "email":"s@gmail.com",
+    "email":"ss@gmail.com",
     "password":"helloworld"
 }
 
@@ -41,10 +37,70 @@ Content-Type: application/json
 ###
 
 POST http://localhost:3500/hospital/update/beds
-Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNAZ21haWwuY29tIiwiaWQiOiI2MjVkYTI3ZGExZjM5NTlhZmY2YTQxYjYiLCJpYXQiOjE2NTAzNTI0ODksImV4cCI6MTY1MDM5MjQ4OX0.MzViNEzSwRJz5LZk2TYWo-KqNrA1z0a-HGmpVGmwKug
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNzQGdtYWlsLmNvbSIsImlkIjoiNjI2YWMzOWVhNjVlM2RkMmJmOTY5MjA0IiwiaWF0IjoxNjUxMTY0NzgxfQ.1mY0HacWFbQVZHKpm8nW0SZk5bToUXOp5C2wGJZ83VE
 Content-Type: application/json
 
 {
-    "availableBeds":{"beds with oxygen":2}
+    "availableBeds":{"beds with oxygen":{"Available":123,"Total":500}}
+}
 
+###
+
+POST http://localhost:3500/hospital/update/info
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNzQGdtYWlsLmNvbSIsImlkIjoiNjI2YWMzOWVhNjVlM2RkMmJmOTY5MjA0IiwiaWF0IjoxNjUxMTY0NzgxfQ.1mY0HacWFbQVZHKpm8nW0SZk5bToUXOp5C2wGJZ83VE
+Content-Type: application/json
+
+{
+   "Location":"Coimbatore",
+    "PhoneNumber":12345678909,
+     "Availablebeds":{"Beds with Oxygen":243,"ICU beds":100,"General Beds":1000},
+     "Dean":"logan",
+     "Deanno":9999999999
+}
+
+###
+
+POST http://localhost:3500/patient/upsert/info
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNzQGdtYWlsLmNvbSIsImlkIjoiNjI2YWMzOWVhNjVlM2RkMmJmOTY5MjA0IiwiaWF0IjoxNjUxMTY0NzgxfQ.1mY0HacWFbQVZHKpm8nW0SZk5bToUXOp5C2wGJZ83VE
+Content-Type: application/json
+
+{
+  "Name":"Logan",
+  "PhoneNumber":1234567890,
+  "DOB": "01-01-2001",
+  "Address":"Coimbatore"
+}
+
+###
+
+POST http://localhost:3500/patient/upsert/bill
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNzQGdtYWlsLmNvbSIsImlkIjoiNjI2YWMzOWVhNjVlM2RkMmJmOTY5MjA0IiwiaWF0IjoxNjUxMTY0NzgxfQ.1mY0HacWFbQVZHKpm8nW0SZk5bToUXOp5C2wGJZ83VE
+Content-Type: application/json
+
+{
+    "RegisterId":"626ad62e402936948bf3267e",
+    "PhoneNumber":1234567890,
+    "TreatmentCharge":{"X-ray":200,"medicine":400,"treatment":10000000},
+    "TreatmentDetails":"He is diaganosed with HIV so the treatment has been gived .final result is failure",
+    "TotalCost":10000600
+}
+
+###
+
+POST http://localhost:3500/patient/get/bills
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNzQGdtYWlsLmNvbSIsImlkIjoiNjI2YWMzOWVhNjVlM2RkMmJmOTY5MjA0IiwiaWF0IjoxNjUxMTY0NzgxfQ.1mY0HacWFbQVZHKpm8nW0SZk5bToUXOp5C2wGJZ83VE
+Content-Type: application/json
+
+{
+    "PhoneNumber":1234567890
+}
+
+###
+
+POST http://localhost:3500/patient/get/patients
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbCI6InNzQGdtYWlsLmNvbSIsImlkIjoiNjI2YWMzOWVhNjVlM2RkMmJmOTY5MjA0IiwiaWF0IjoxNjUxMTY0NzgxfQ.1mY0HacWFbQVZHKpm8nW0SZk5bToUXOp5C2wGJZ83VE
+Content-Type: application/json
+
+{
+    "PhoneNumber":1234567890
 }
